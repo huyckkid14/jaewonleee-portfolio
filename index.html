@@ -3,162 +3,327 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jaewon Lee — Journalism Portfolio</title>
+<title>Jaewon's Journalistic Journey</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #f7f3ee;
-        font-family: "Poppins", sans-serif;
-        color: #2a2522;
-    }
+/* global settings */
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff9f4;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
 
-    .hero {
-        background: linear-gradient(135deg, #d46a34, #c8553e, #a1425a, #6c4a8a, #3e5e9e);
-        padding: 60px 20px;
-        text-align: center;
-        color: white;
-        animation: shift 12s infinite alternate ease-in-out;
-        background-size: 400% 400%;
-    }
+/* nav */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    gap: 30px;
+    font-size: 1.1rem;
+    background: #ff4f81;
+    color: white;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
 
-    @keyframes shift {
-        0% {background-position: 0% 50%;}
-        100% {background-position: 100% 50%;}
-    }
+/* hero */
+.hero {
+    position: relative;
+    padding: 80px 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff4f81, #9158ff, #27d7c8);
+    background-size: 250% 250%;
+    animation: flow 12s infinite ease-in-out alternate;
+}
+@keyframes flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.hero h1, .hero h2, .hero h3 {
+    position: absolute;
+    font-size: 6rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    pointer-events: none;
+    white-space: nowrap;
+}
+.hero h1 { top: 10%; left: 5%; }
+.hero h2 { top: 40%; right: 10%; }
+.hero h3 { bottom: 10%; left: 5%; }
 
-    h1 {
-        font-size: 3rem;
-        margin-bottom: 5px;
-    }
+/* collage */
+.collage {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.slice {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px;
+    clip-path: inset(8px 0 8px 0 round 12px);
+    filter: brightness(0.95);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
 
-    h2 {
-        margin-top: 0;
-        font-weight: 300;
-        opacity: 0.9;
-    }
+/* portfolio title */
+.portfolio-header {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #9158ff;
+    text-shadow: 0 3px 10px rgba(145,88,255,0.25);
+}
 
-    .container {
-        width: 90%;
-        max-width: 1100px;
-        margin: 40px auto;
-    }
+/* portfolio cards */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto 100px auto;
+}
+.piece {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+    background: linear-gradient(135deg, #ffe3ef, #e0d1ff, #d2fff9);
+    padding: 25px;
+    margin-bottom: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    transition: 0.3s;
+}
+.piece:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+}
+.thumb {
+    width: 100%;
+    height: 190px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+}
+.piece h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #6d2e84;
+    font-weight: 700;
+}
+.piece p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a2f54;
+    margin-top: 10px;
+    font-weight: 500;
+}
 
-    .piece {
-        display: grid;
-        grid-template-columns: 250px 1fr;
-        gap: 20px;
-        background: white;
-        padding: 20px;
-        margin-bottom: 25px;
-        border-radius: 14px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-        transition: 0.3s;
-        overflow: hidden;
-    }
+/* contact section */
+.contact-section {
+    padding: 120px 40px;
+    background: linear-gradient(135deg, #9158ff, #ff4f81);
+    color: white;
+    text-align: center;
+}
+.contact-section h2 {
+    font-size: 3.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: rgba(255,255,255,0.9);
+}
 
-    .piece:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
+/* contact card box */
+.contact-card {
+    background: white;
+    color: #4a2f54;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.contact-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #6d2e84;
+}
+.contact-card .email {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
 
-    .thumb {
-        width: 100%;
-        height: 170px;
-        background-size: cover;
-        background-position: center;
-        border-radius: 12px;
-        filter: brightness(0.9);
-        clip-path: inset(10px 0 10px 0 round 12px);
-    }
+/* form inputs */
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: none;
+    background: #f3f0ff;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+.contact-card button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background: #9158ff;
+    color: white;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.contact-card button:hover {
+    background: #7c45e3;
+}
 
-    .piece h3 {
-        margin: 0;
-        font-size: 1.5rem;
-    }
-
-    .piece p {
-        margin-top: 8px;
-        line-height: 1.5;
-        opacity: 0.8;
-    }
-
-    .footer {
-        text-align: center;
-        padding: 30px;
-        opacity: 0.7;
-    }
+/* footer */
+.footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 1rem;
+    color: #777;
+}
 </style>
-
 </head>
+
 <body>
 
-<div class="hero">
-    <h1>Jaewon Lee</h1>
-    <h2>Semester Journalism Portfolio</h2>
+<!-- nav links -->
+<div class="nav">
+    <a href="#about">About</a>
+    <a href="#writing">Writing</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
 </div>
 
-<div class="container">
+<!-- hero section -->
+<div class="hero" id="about">
 
-    <!-- 1. Podcast -->
+    <h1>This is</h1>
+    <h2>MY</h2>
+    <h3>Journey.</h3>
+
+    <div class="collage">
+        <div class="slice" style="background-image: url('images/podcast.jpg');"></div>
+        <div class="slice" style="background-image: url('images/phonepockets.jpg');"></div>
+        <div class="slice" style="background-image: url('images/scam.jpg');"></div>
+        <div class="slice" style="background-image: url('images/4025.jpg');"></div>
+        <div class="slice" style="background-image: url('images/crowley.jpg');"></div>
+        <div class="slice" style="background-image: url('images/walter.jpg');"></div>
+    </div>
+
+</div>
+
+<h1 class="portfolio-header" id="writing">My Work</h1>
+
+<!-- portfolio -->
+<div class="container" id="portfolio">
+
     <div class="piece">
         <div class="thumb" style="background-image: url('images/podcast.jpg');"></div>
         <div>
-            <h3>1. We Live On Our Phones — Podcast</h3>
-            <p>A fun podcast episode exploring phone addiction and its impact on real student life. Shows my narrative style and audio structure.</p>
+            <h3>We Live On Our Phones — Podcast</h3>
+            <p>A podcast exploring phone addiction.</p>
         </div>
     </div>
 
-    <!-- 2. Phone Pockets -->
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/phonepockets.jpg');"></div>
+        <div class="thumb" style="background-image: url('images/phonepockets.jpg'); ?>"></div>
         <div>
-            <h3>2. Phone Pockets Article</h3>
-            <p>My first news article for <i>The Emery</i>. Demonstrates solid news-writing structure with lede, quotes, and clear organization.</p>
+            <h3>Phone Pockets Article</h3>
+            <p>My first journalistic news article.</p>
         </div>
     </div>
 
-    <!-- 3. AAPS Scam -->
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/scam.jpg');"></div>
+        <div class="thumb" style="background-image: url('images/scam.jpg'); ?>"></div>
         <div>
-            <h3>3. AAPS Scam Incident Article</h3>
-            <p>A timely news brief covering a real event affecting the school community. Strong clarity, accuracy, and concise reporting.</p>
+            <h3>AAPS Scam Incident</h3>
+            <p>A news safety brief for students.</p>
         </div>
     </div>
 
-    <!-- 4. 4025 -->
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/4025.jpg');"></div>
+        <div class="thumb" style="background-image: url('images/4025.jpg'); ?>"></div>
         <div>
-            <h3>4. 4025 Article</h3>
-            <p>A unique, interesting piece that highlights a distinct part of the Huron community. Good descriptive detail and narrative flow.</p>
+            <h3>4025 Article</h3>
+            <p>Covering a unique part of Huron culture.</p>
         </div>
     </div>
 
-    <!-- 5. Crowley Feature -->
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/crowley.jpg');"></div>
+        <div class="thumb" style="background-image: url('images/crowley.jpg'); ?>"></div>
         <div>
-            <h3>5. “International” Teacher Daniel Crowley</h3>
-            <p>My first major feature story. In-depth interviews, strong transitions, descriptive writing, and layering perspectives.</p>
+            <h3>Daniel Crowley Feature</h3>
+            <p>A feature story with interviews.</p>
         </div>
     </div>
 
-    <!-- 6. Walter -->
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/walter.jpg');"></div>
+        <div class="thumb" style="background-image: url('images/walter.jpg'); ?>"></div>
         <div>
-            <h3>6. Sophomore Saturday: Walter McMorrough</h3>
-            <p>A personality-style student profile showing my ability to write short-form human-interest pieces with voice and structure.</p>
+            <h3>Sophomore Saturday</h3>
+            <p>A short personality profile.</p>
         </div>
     </div>
 
-    <div class="footer">
-        Hand-coded by Jaewon — No website builders used.
+</div>
+
+<!-- REAL WORKING CONTACT FORM -->
+<div id="contact" class="contact-section">
+
+    <h2>Contact Me</h2>
+    <p>Want to reach out about writing, journalism, or a project? Send me a message.</p>
+
+    <div class="contact-card">
+
+        <h3>Email Me</h3>
+        <div class="email">320512@aaps.k12.mi.us</div>
+
+        <!-- FORM USING FORMSPREE -->
+        <form action="https://formspree.io/f/mblnygrg" method="POST">
+
+            <input type="text" name="name" placeholder="Your name" required>
+
+            <input type="email" name="email" placeholder="Your email" required>
+
+            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
     </div>
 
+</div>
+
+<div class="footer">
+    © 2025 Jaewon Lee
 </div>
 
 </body>
