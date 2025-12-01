@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaewon Lee — Journalism Portfolio</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f7f3ee;
+        font-family: "Poppins", sans-serif;
+        color: #2a2522;
+    }
+
+    .hero {
+        background: linear-gradient(135deg, #d46a34, #c8553e, #a1425a, #6c4a8a, #3e5e9e);
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+        animation: shift 12s infinite alternate ease-in-out;
+        background-size: 400% 400%;
+    }
+
+    @keyframes shift {
+        0% {background-position: 0% 50%;}
+        100% {background-position: 100% 50%;}
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        margin-top: 0;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 40px auto;
+    }
+
+    .piece {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 20px;
+        background: white;
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        overflow: hidden;
+    }
+
+    .piece:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .thumb {
+        width: 100%;
+        height: 170px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        filter: brightness(0.9);
+        clip-path: inset(10px 0 10px 0 round 12px);
+    }
+
+    .piece h3 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .piece p {
+        margin-top: 8px;
+        line-height: 1.5;
+        opacity: 0.8;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 30px;
+        opacity: 0.7;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="hero">
+    <h1>Jaewon Lee</h1>
+    <h2>Semester Journalism Portfolio</h2>
+</div>
+
+<div class="container">
+
+    <!-- 1. Podcast -->
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/podcast.jpg');"></div>
+        <div>
+            <h3>1. We Live On Our Phones — Podcast</h3>
+            <p>A fun podcast episode exploring phone addiction and its impact on real student life. Shows my narrative style and audio structure.</p>
+        </div>
+    </div>
+
+    <!-- 2. Phone Pockets -->
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/phonepockets.jpg');"></div>
+        <div>
+            <h3>2. Phone Pockets Article</h3>
+            <p>My first news article for <i>The Emery</i>. Demonstrates solid news-writing structure with lede, quotes, and clear organization.</p>
+        </div>
+    </div>
+
+    <!-- 3. AAPS Scam -->
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/scam.jpg');"></div>
+        <div>
+            <h3>3. AAPS Scam Incident Article</h3>
+            <p>A timely news brief covering a real event affecting the school community. Strong clarity, accuracy, and concise reporting.</p>
+        </div>
+    </div>
+
+    <!-- 4. 4025 -->
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/4025.jpg');"></div>
+        <div>
+            <h3>4. 4025 Article</h3>
+            <p>A unique, interesting piece that highlights a distinct part of the Huron community. Good descriptive detail and narrative flow.</p>
+        </div>
+    </div>
+
+    <!-- 5. Crowley Feature -->
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/crowley.jpg');"></div>
+        <div>
+            <h3>5. “International” Teacher Daniel Crowley</h3>
+            <p>My first major feature story. In-depth interviews, strong transitions, descriptive writing, and layering perspectives.</p>
+        </div>
+    </div>
+
+    <!-- 6. Walter -->
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/walter.jpg');"></div>
+        <div>
+            <h3>6. Sophomore Saturday: Walter McMorrough</h3>
+            <p>A personality-style student profile showing my ability to write short-form human-interest pieces with voice and structure.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        Hand-coded by Jaewon — No website builders used.
+    </div>
+
+</div>
+
+</body>
+</html>
