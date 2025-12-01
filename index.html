@@ -6,7 +6,9 @@
 <title>Jaewon's Journalistic Journey</title>
 
 <style>
-/* global settings */
+/* =======================================================
+   GLOBAL STYLES
+   ======================================================= */
 body {
     margin: 0;
     padding: 0;
@@ -18,7 +20,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* nav */
+/* =======================================================
+   NAVIGATION BAR
+   ======================================================= */
 .nav {
     display: flex;
     justify-content: flex-end;
@@ -34,7 +38,9 @@ html {
     font-weight: 500;
 }
 
-/* hero */
+/* =======================================================
+   HERO SECTION
+   ======================================================= */
 .hero {
     position: relative;
     padding: 80px 40px;
@@ -47,10 +53,11 @@ html {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
+
 .hero h1, .hero h2, .hero h3 {
     position: absolute;
     font-size: 6rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.4);
     font-weight: 700;
     text-shadow: 0 0 20px rgba(255,255,255,0.3);
     pointer-events: none;
@@ -60,7 +67,7 @@ html {
 .hero h2 { top: 40%; right: 10%; }
 .hero h3 { bottom: 10%; left: 5%; }
 
-/* collage */
+/* Collage slices */
 .collage {
     width: 100%;
     max-width: 500px;
@@ -81,7 +88,73 @@ html {
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* portfolio title */
+/* =======================================================
+   BIO SECTION
+   ======================================================= */
+.bio-section {
+    padding: 100px 20px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.bio-card {
+    width: 90%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    background: linear-gradient(135deg, #ffe3ef, #e0d1ff, #d2fff9);
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.22);
+    gap: 30px;
+}
+
+/* Bio image area */
+.bio-image {
+    background-image: url("https://thehuronemery.com/wp-content/uploads/2025/10/jaewon-1200x800.jpeg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 330px;
+    border-radius: 18px;
+}
+
+/* Text */
+.bio-text h2 {
+    margin: 0 0 15px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #6d2e84;
+}
+
+.bio-text p {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: #4a2f54;
+    margin-bottom: 18px;
+}
+
+/* Emery button */
+.emery-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 26px;
+    background: #9158ff;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+.emery-btn:hover {
+    background: #7c45e3;
+    transform: translateY(-3px);
+}
+
+/* =======================================================
+   PORTFOLIO SECTION HEADER
+   ======================================================= */
 .portfolio-header {
     text-align: center;
     margin-top: 100px;
@@ -91,7 +164,9 @@ html {
     text-shadow: 0 3px 10px rgba(145,88,255,0.25);
 }
 
-/* portfolio cards */
+/* =======================================================
+   PORTFOLIO CARDS
+   ======================================================= */
 .container {
     width: 90%;
     max-width: 1100px;
@@ -119,6 +194,7 @@ html {
     background-size: cover;
     background-position: center;
 }
+
 .piece h3 {
     margin: 0;
     font-size: 1.8rem;
@@ -133,7 +209,9 @@ html {
     font-weight: 500;
 }
 
-/* contact section */
+/* =======================================================
+   CONTACT SECTION
+   ======================================================= */
 .contact-section {
     padding: 120px 40px;
     background: linear-gradient(135deg, #9158ff, #ff4f81);
@@ -151,7 +229,7 @@ html {
     color: rgba(255,255,255,0.9);
 }
 
-/* contact card box */
+/* Contact card */
 .contact-card {
     background: white;
     color: #4a2f54;
@@ -164,16 +242,11 @@ html {
 }
 .contact-card h3 {
     font-size: 1.8rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: 700;
     color: #6d2e84;
 }
-.contact-card .email {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
 
-/* form inputs */
 .contact-card input,
 .contact-card textarea {
     width: 100%;
@@ -202,7 +275,7 @@ html {
     background: #7c45e3;
 }
 
-/* footer */
+/* Footer */
 .footer {
     text-align: center;
     padding: 40px;
@@ -214,17 +287,20 @@ html {
 
 <body>
 
-<!-- nav links -->
+<!-- =======================================================
+     NAVIGATION BAR
+     ======================================================= -->
 <div class="nav">
     <a href="#about">About</a>
+    <a href="#bio">Bio</a>
     <a href="#writing">Writing</a>
-    <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
 </div>
 
-<!-- hero section -->
+<!-- =======================================================
+     HERO SECTION
+     ======================================================= -->
 <div class="hero" id="about">
-
     <h1>This is</h1>
     <h2>MY</h2>
     <h3>Journey.</h3>
@@ -237,83 +313,128 @@ html {
         <div class="slice" style="background-image: url('images/crowley.jpg');"></div>
         <div class="slice" style="background-image: url('images/walter.jpg');"></div>
     </div>
+</div>
+
+<!-- =======================================================
+     BIO SECTION
+     ======================================================= -->
+<div id="bio" class="bio-section">
+
+    <div class="bio-card">
+        <div class="bio-image"></div>
+
+        <div class="bio-text">
+            <h2>Jaewon Lee — News Editor</h2>
+
+            <p>
+                Jaewon Lee is a ninth-grade student journalist at Huron High School and a News Editor at 
+                <em>The Huron Emery</em>. He has a passion for reporting, storytelling, web development, 
+                and creating digital projects that blend design and technology.
+            </p>
+
+            <p>
+                Outside of journalism, Jaewon plays the viola, codes apps and games, makes Christian lyric videos, 
+                and volunteers actively in his community. His favorite ice cream flavor is vanilla, 
+                and his favorite book series is <em>Spy School</em>.
+            </p>
+
+            <p>
+                Jaewon also runs a growing YouTube channel where he creates AI-powered worship music, animations, 
+                and tech-themed videos. As of August 2025, the channel has over 36 subscribers.
+            </p>
+
+            <a href="https://thehuronemery.com/staff_name/jaewon-lee/" class="emery-btn" target="_blank">
+                View on The Emery
+            </a>
+        </div>
+    </div>
 
 </div>
 
+<!-- =======================================================
+     PORTFOLIO SECTION HEADER
+     ======================================================= -->
 <h1 class="portfolio-header" id="writing">My Work</h1>
 
-<!-- portfolio -->
+<!-- =======================================================
+     PORTFOLIO CONTENT
+     ======================================================= -->
 <div class="container" id="portfolio">
 
     <div class="piece">
         <div class="thumb" style="background-image: url('images/podcast.jpg');"></div>
         <div>
             <h3>We Live On Our Phones — Podcast</h3>
-            <p>A podcast exploring phone addiction.</p>
+            <p>A storytelling-style podcast episode examining the everyday influence of smartphones on modern student behavior. 
+               This piece uses pacing, tone, and sound design to create a narrative experience blending humor, relatability,
+               and real student voices.</p>
         </div>
     </div>
 
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/phonepockets.jpg'); ?>"></div>
+        <div class="thumb" style="background-image: url('images/phonepockets.jpg');"></div>
         <div>
             <h3>Phone Pockets Article</h3>
-            <p>My first journalistic news article.</p>
+            <p>A structured news article describing the new “phone pocket” system at Huron High School. 
+               Demonstrates strong reporting, balanced quotes, and clear communication.</p>
         </div>
     </div>
 
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/scam.jpg'); ?>"></div>
+        <div class="thumb" style="background-image: url('images/scam.jpg');"></div>
         <div>
             <h3>AAPS Scam Incident</h3>
-            <p>A news safety brief for students.</p>
+            <p>A brief breaking-news alert warning the community of a widespread scam email impersonating district administration. 
+               Fast, factual, and focused on community safety.</p>
         </div>
     </div>
 
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/4025.jpg'); ?>"></div>
+        <div class="thumb" style="background-image: url('images/4025.jpg');"></div>
         <div>
             <h3>4025 Article</h3>
-            <p>Covering a unique part of Huron culture.</p>
+            <p>A cultural piece exploring the meaning and tradition of “4025” at Huron, combining storytelling with school history.  
+               Blends narrative voice and campus culture.</p>
         </div>
     </div>
 
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/crowley.jpg'); ?>"></div>
+        <div class="thumb" style="background-image: url('images/crowley.jpg');"></div>
         <div>
             <h3>Daniel Crowley Feature</h3>
-            <p>A feature story with interviews.</p>
+            <p>A profile of one of Huron’s most globally experienced teachers, based on interviews and narrative reporting. 
+               Highlights travel, culture, and education philosophies.</p>
         </div>
     </div>
 
     <div class="piece">
-        <div class="thumb" style="background-image: url('images/walter.jpg'); ?>"></div>
+        <div class="thumb" style="background-image: url('images/walter.jpg');"></div>
         <div>
             <h3>Sophomore Saturday</h3>
-            <p>A short personality profile.</p>
+            <p>A fun personality profile capturing the daily interests and quirks of a Huron sophomore. 
+               Focuses on voice, detail, and character-driven writing.</p>
         </div>
     </div>
 
 </div>
 
-<!-- REAL WORKING CONTACT FORM -->
+<!-- =======================================================
+     CONTACT SECTION
+     ======================================================= -->
 <div id="contact" class="contact-section">
 
     <h2>Contact Me</h2>
-    <p>Want to reach out about writing, journalism, or a project? Send me a message.</p>
+    <p>If you’d like to reach out for anything, feel free to leave a message through the form. You can also directly email me at 320512@aaps.k12.mi.us. I check my email regularly.</p>
 
     <div class="contact-card">
 
-        <h3>Email Me</h3>
-        <div class="email">320512@aaps.k12.mi.us</div>
+        <h3>Send a Message</h3>
 
-        <!-- FORM USING FORMSPREE -->
         <form action="https://formspree.io/f/mblnygrg" method="POST">
 
             <input type="text" name="name" placeholder="Your name" required>
-
-            <input type="email" name="email" placeholder="Your email" required>
-
-            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+            <input type="email" name="_replyto" placeholder="Your email" required>
+            <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
 
             <button type="submit">Send Message</button>
         </form>
@@ -323,7 +444,7 @@ html {
 </div>
 
 <div class="footer">
-    © 2025 Jaewon Lee
+    © 2025 Jaewon Lee — Student Journalist at The Huron Emery
 </div>
 
 </body>
