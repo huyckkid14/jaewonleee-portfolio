@@ -10,51 +10,49 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     background: #ffffff;
-    line-height: 1.7;
     color: #222;
+    line-height: 1.7;
 }
-
-/* Back to Home */
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 9999;
+}
 .back-home {
     position: fixed;
-    top: -50px;
-    left: 20px;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
     background: rgba(0,0,0,0.65);
     color: white;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 8px;
-    transition: 0.3s ease;
-    z-index: 999;
+    padding: 10px 22px;
+    font-size: 0.95rem;
     text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    z-index: 10000;
 }
+.reveal-top:hover ~ .back-home,
 .back-home:hover {
     top: 20px;
 }
-
-/* HEADER IMAGE */
 header {
     position: relative;
     width: 100%;
     height: 100vh;
     background-image: url("images/crowley.jpg");
     background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+    background-position: center;
 }
-
-/* DARK OVERLAY */
 header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.45),
-        rgba(0,0,0,0.55)
-    );
+    background: rgba(0,0,0,0.45);
 }
-
-/* CENTERED HEADLINE + BYLINE */
 .header-text {
     position: absolute;
     top: 50%;
@@ -64,51 +62,60 @@ header::before {
     color: white;
     padding: 20px;
 }
-
 .header-text h1 {
     margin: 0;
     font-size: 2.8rem;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    text-shadow: 0 0 12px rgba(0,0,0,0.55);
 }
-
 .header-text .byline {
     margin-top: 10px;
     font-size: 1.1rem;
-    opacity: 0.95;
+    opacity: 0.92;
 }
-
-/* CAPTION */
+.emery-button {
+    margin-top: 18px;
+}
+.emery-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.emery-button a:hover {
+    background: #e04372;
+}
 .caption {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    font-size: 0.9rem;
+    padding: 8px 12px;
     background: rgba(0,0,0,0.55);
     color: white;
-    padding: 8px 12px;
     border-radius: 6px;
+    font-size: 0.9rem;
 }
-
-/* ARTICLE BODY */
 .article {
     max-width: 900px;
     width: 90%;
     margin: 60px auto;
     font-size: 1.15rem;
 }
-
-/* MOBILE */
 @media(max-width: 600px) {
     .header-text h1 {
-        font-size: 2.0rem;
-    }
-    .header-text .byline {
-        font-size: 1rem;
+        font-size: 2.1rem;
     }
     .caption {
         font-size: 0.75rem;
         padding: 6px 10px;
+    }
+    .back-home {
+        font-size: 0.85rem;
+        padding: 8px 14px;
     }
 }
 </style>
@@ -116,14 +123,19 @@ header::before {
 
 <body>
 
-<a href="/" class="back-home">Back to Home</a>
+<div class="reveal-top"></div>
+<a href="index.html" class="back-home">Back to Home</a>
 
 <header>
     <div class="header-text">
         <h1>Around the world: “international” teacher Daniel Crowley</h1>
         <div class="byline">By Jaewon Lee</div>
+        <div class="emery-button">
+            <a href="https://thehuronemery.com/14209/features/around-the-world-international-teacher-daniel-crowley/" target="_blank">
+                View on The Emery
+            </a>
+        </div>
     </div>
-
     <div class="caption">
         Crowley teaches 9th grade English during 3rd period.<br>
         Photo by Jaewon Lee.
@@ -131,7 +143,6 @@ header::before {
 </header>
 
 <div class="article">
-
 <p>For ninth grade English teacher Daniel Crowley, teaching has never been limited to one classroom or one city. From the back streets of Denver to the lively streets of Madrid and back to Ann Arbor, Crowley’s journey has been shaped by discovery, loss and a deep belief in the power of education.</p>
 
 <p>Crowley was born and raised in Ann Arbor, and attended Ann Arbor Public Schools. He attended Abbot for elementary, Forsythe for middle school and Pioneer for high school. He especially loved his experience at Abbot Elementary School, since he felt that “[his] natural curiosity was celebrated and encouraged.”</p>
