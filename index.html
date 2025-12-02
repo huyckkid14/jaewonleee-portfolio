@@ -282,6 +282,18 @@ html {
     font-size: 1rem;
     color: #777;
 }
+
+/* Make portfolio links same color and only underline on hover */
+.piece a {
+    color: inherit;       /* same color as the heading */
+    text-decoration: none;
+    font-weight: inherit; /* keeps it matching */
+}
+
+.piece a:hover {
+    text-decoration: underline;
+}
+
 </style>
 </head>
 
@@ -401,7 +413,7 @@ html {
     <div class="piece">
         <div class="thumb" style="background-image: url('images/crowley.jpg');"></div>
         <div>
-            <h3>Daniel Crowley Feature</h3>
+            <h3><a href="around-the-world-mr-crowley">Daniel Crowley Feature</a></h3>
             <p>A profile of one of Huron’s most globally experienced teachers, based on interviews and narrative reporting. 
                Highlights travel, culture, and education philosophies.</p>
         </div>
