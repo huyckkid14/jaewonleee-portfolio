@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophomore Saturday: Walter McMorrough</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #222;
+    line-height: 1.7;
+}
+
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 9999;
+}
+.back-home {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    z-index: 10000;
+}
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    top: 20px;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/walter.jpg");
+    background-size: cover;
+    background-position: center;
+}
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0,0,0,0.55);
+}
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.92;
+}
+
+.emery-button {
+    margin-top: 18px;
+}
+.emery-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.emery-button a:hover {
+    background: #e04372;
+}
+
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.article {
+    max-width: 900px;
+    width: 90%;
+    margin: 60px auto;
+    font-size: 1.15rem;
+}
+
+.article p {
+    margin-bottom: 22px;
+}
+
+@media(max-width: 600px) {
+    .header-text h1 {
+        font-size: 2.1rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+    .back-home {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="reveal-top"></div>
+<a class="back-home" href="index.html">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>Sophomore Saturday: Walter McMorrough</h1>
+        <div class="byline">By Jaewon Lee</div>
+
+        <div class="emery-button">
+            <a href="https://thehuronemery.com/14633/humans-of-huron/sophomore-saturday-walter-mcmorrough" target="_blank">
+                View on The Emery
+            </a>
+        </div>
+    </div>
+
+    <div class="caption">
+        McMorrough posing for a photo.<br>
+        Courtesy of McMorrough.
+    </div>
+</header>
+
+<div class="article">
+
+<p><strong>Q: Tell us a little bit about yourself (name, age, etc) and what hobbies/sports you do.</strong><br>
+<strong>A:</strong> I am Walter McMorrough. I am 15 years old, and I do cross country and track.</p>
+
+<p><strong>Q: How is this year’s learning different from last year’s?</strong><br>
+<strong>A:</strong> I know, obviously, all my classes this year are the next level from my previous year’s classes, but I really really feel like the material is elevated and I have to use the skills I got from previous classes.</p>
+
+<p><strong>Q: Which classes have you found the most interesting and why?</strong><br>
+<strong>A:</strong> Computer Science Principles and Government because I like computer science and I feel Government has helped me understand more of our government and prepared me to become an adult, American citizen.</p>
+
+<p><strong>Q: Describe something that surprised you coming back to school this year that you weren’t expecting?</strong><br>
+<strong>A:</strong> How big a deal 67 is. I thought it was kind of funny but especially this year you can’t escape it.</p>
+
+<p><strong>Q: What are your thoughts about the personal project? What were some challenges you have faced so far? What are you working on?</strong><br>
+<strong>A:</strong> For my personal project I’m making a video game, and one part about it is I get really unmotivated when I’m trying to fix or do something and it just doesn’t work. This causes me to get really unmotivated and turn off the project but when it finally does work I’m really happy.</p>
+
+<p><strong>Q: If you could change one thing from your freshman self, what would it be?</strong><br>
+<strong>A:</strong> [I’ll] tell them to try to relax a little more, not everything is as big a deal as it seems.</p>
+
+</div>
+
+</body>
+</html>
