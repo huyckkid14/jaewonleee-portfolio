@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAPS students caught in October email scam</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    line-height: 1.7;
+    color: #222;
+}
+
+/* Back to home hover button */
+.back-home {
+    position: fixed;
+    top: -50px;
+    left: 20px;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    z-index: 999;
+    text-decoration: none;
+}
+.back-home:hover {
+    top: 20px;
+}
+
+/* HEADER IMAGE */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/scam.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* dark overlay for readability */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.55)
+    );
+}
+
+/* CENTER HEADLINE */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* CAPTION bottom-right */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* ARTICLE BODY */
+.article {
+    max-width: 900px;
+    width: 90%;
+    margin: 60px auto;
+    font-size: 1.15rem;
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+    .header-text h1 {
+        font-size: 2.0rem;
+    }
+    .header-text .byline {
+        font-size: 1rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a href="/" class="back-home">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>AAPS students caught in October email scam</h1>
+        <div class="byline">By Jaewon Lee</div>
+    </div>
+
+    <div class="caption">
+        Screenshot of the phishing email.<br>
+        Photo by Jaewon Lee.
+    </div>
+</header>
+
+<div class="article">
+
+<p>Early October 2025, Ann Arbor Public Schools (AAPS) students got their accounts compromised and sent emails to other AAPS students that were later identified as phishing.</p>
+
+<p>Phishing emails are malicious emails that attempt to steal the recipient’s personal information through suspicious links, attachments, and more. The phishing email contained a table asking the user to open the attachments, which turned out to contain malware. Many of the messages sent used titles like “Review And Sign Document Attached” and other generic subjects. They appeared to be from AAPS students, deceiving some people.</p>
+
+<p>“It was really frustrating and annoying,” an anonymous Huron student, whose account was compromised by the incident, said. “If you get sent something strange and [Google] gives you a scam warning, listen to it.”</p>
+
+<p>AAPS Information Technology Department (ITD) commented on the incident, saying that the department takes cybersecurity very seriously by implementing “a variety of layered cybersecurity best practices to ensure our district stays safe and secure,” as ITD representative Heather Kellstrom said.</p>
+
+<p>“It appears that several student accounts were used to send malicious or impersonating emails, but some of those emails disappeared after several days,” Kellstrom said. “A phishing type of email was sent to a grouping of end-users. The phishing email leveraged addresses from each user’s account to perpetuate the phishing email. The email was flagged by both our tech systems and also end-users.”</p>
+
+<p>Kellstrom said that AAPS constantly scans each email sent to the district as clean, spam or a threat. When an email that is sent is later identified as phishing scam and meets the system requirements, the system “[isolates] the email from end-users’ inboxes as a protection measure to end-user account credentials.”</p>
+
+<p>Kellstrom furthermore said that phishing campaigns are created to “exploit human psychology.” She also said that in AAPS, the tech team uses a “layered approach” to deal with phishing campaigns.</p>
+
+<p>“Prior to an email entering our ‘@aaps.k12.mi.us’ domain, we have implemented industry standards to secure our email servers,” Kellstrom said. “Any email that doesn’t have the necessary matching server criteria and digital signatures is marked as Phishing or SPAM.”</p>
+
+<p>The standard industry security Kellstrom mentioned has several layers.</p>
+
+<p>First off, before an email reaches the domain “@aaps.k12.mi.us” or “@a2schools.org,” AAPS servers automatically scan the message for necessary headers that many scam emails don’t include.</p>
+
+<p>“[Sender Privacy Feedback (SPF)] uses DNS TXT records to list what our specific email servers are,” Kellstrom said. “DomainKeys Identified Mail [also] adds a digital signature to our emails to validate our domain and our domain servers.”</p>
+
+<p>AAPS ITD is not the only support desk that focuses heavily on cybersecurity.</p>
+
+<p>“For more than 20 years, the Department of Homeland Security (DHS) and the Cybersecurity & Infrastructure Security Agency (CISA) have spotlighted the importance of taking daily actions to reduce risks when working online and using connected devices through an annual coordinated theme across the U.S,” Kellstrom said.</p>
+
+<p>While the scam incident died down due to AAPS intervention, it is still important to recognize the importance of cybersecurity and how it helps stop malware from coming into the district.</p>
+
+<p>“Important end-user best practices [to avoid phishing] include: recognizing and reporting phishing, requiring strong passwords, using Multifactor Authentication, updating software, and getting our internal and external stakeholders involved in being cybersafe on the forward-facing side of our organization,” Kellstrom said.</p>
+
+<p>The students who want to report the cybersecurity incidents can email family_techsupport@aaps.k12.mi.us or report using the IncidentIQ system according to the instruction provided by the AAPS IT department.</p>
+
+<p>“[If you receive a scam email,] do not respond to the email,” Kellstrom said. “Even clicking ‘unsubscribe’ can even confirm that your email address is active, leading to more scam emails.”</p>
+
+</div>
+
+</body>
+</html>
