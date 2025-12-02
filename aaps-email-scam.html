@@ -10,29 +10,49 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     background: #ffffff;
-    line-height: 1.7;
     color: #222;
+    line-height: 1.7;
+    position: relative;
 }
 
-/* Back to home hover button */
+/* ===============================
+   FIXED BACK TO HOME (WORKING)
+   =============================== */
+
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px; /* hover zone */
+    z-index: 9999;
+}
+
 .back-home {
     position: fixed;
-    top: -50px;
-    left: 20px;
+    top: -60px; /* hidden */
+    left: 50%;
+    transform: translateX(-50%);
     background: rgba(0,0,0,0.65);
     color: white;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 8px;
-    transition: 0.3s ease;
-    z-index: 999;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 10px;
     text-decoration: none;
+    transition: 0.3s ease;
+    z-index: 10000;
 }
+
+/* FIX: stays open even when hovering the button */
+.reveal-top:hover ~ .back-home,
 .back-home:hover {
     top: 20px;
 }
 
-/* HEADER IMAGE */
+/* ===============================
+   HEADER IMAGE
+   =============================== */
+
 header {
     position: relative;
     width: 100%;
@@ -40,10 +60,8 @@ header {
     background-image: url("images/scam.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
-/* dark overlay for readability */
 header::before {
     content: "";
     position: absolute;
@@ -54,7 +72,10 @@ header::before {
     );
 }
 
-/* CENTER HEADLINE */
+/* ===============================
+   TITLE + BYLINE
+   =============================== */
+
 .header-text {
     position: absolute;
     top: 50%;
@@ -75,23 +96,41 @@ header::before {
 .header-text .byline {
     margin-top: 10px;
     font-size: 1.1rem;
-    font-weight: 500;
     opacity: 0.9;
 }
 
-/* CAPTION bottom-right */
+/* EMERY BUTTON */
+.emery-button {
+    margin-top: 18px;
+}
+
+.emery-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.emery-button a:hover {
+    background: #e04372;
+}
+
+/* CAPTION */
 .caption {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    font-size: 0.9rem;
+    padding: 8px 12px;
     background: rgba(0,0,0,0.55);
     color: white;
-    padding: 8px 12px;
+    font-size: 0.9rem;
     border-radius: 6px;
 }
 
-/* ARTICLE BODY */
+/* ARTICLE */
 .article {
     max-width: 900px;
     width: 90%;
@@ -104,9 +143,6 @@ header::before {
     .header-text h1 {
         font-size: 2.0rem;
     }
-    .header-text .byline {
-        font-size: 1rem;
-    }
     .caption {
         font-size: 0.75rem;
         padding: 6px 10px;
@@ -117,12 +153,22 @@ header::before {
 
 <body>
 
-<a href="/" class="back-home">Back to Home</a>
+<!-- invisible hover area -->
+<div class="reveal-top"></div>
+
+<!-- back to home button -->
+<a href="index.html" class="back-home">Back to Home</a>
 
 <header>
     <div class="header-text">
         <h1>AAPS students caught in October email scam</h1>
         <div class="byline">By Jaewon Lee</div>
+
+        <div class="emery-button">
+            <a href="https://thehuronemery.com/14566/news/aaps-students-caught-caught-in-october-email-scam/" target="_blank">
+                View on The Emery
+            </a>
+        </div>
     </div>
 
     <div class="caption">
@@ -163,7 +209,7 @@ header::before {
 
 <p>“Important end-user best practices [to avoid phishing] include: recognizing and reporting phishing, requiring strong passwords, using Multifactor Authentication, updating software, and getting our internal and external stakeholders involved in being cybersafe on the forward-facing side of our organization,” Kellstrom said.</p>
 
-<p>The students who want to report the cybersecurity incidents can email family_techsupport@aaps.k12.mi.us or report using the IncidentIQ system according to the instruction provided by the AAPS IT department.</p>
+<p>The students who want to report the cybersecurity incidents can email <b>family_techsupport@aaps.k12.mi.us</b> or report using the IncidentIQ system according to the instruction provided by the AAPS IT department.</p>
 
 <p>“[If you receive a scam email,] do not respond to the email,” Kellstrom said. “Even clicking ‘unsubscribe’ can even confirm that your email address is active, leading to more scam emails.”</p>
 
