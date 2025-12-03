@@ -14,15 +14,11 @@ body {
     line-height: 1.7;
 }
 
-/* ===============================
-   HOVER REVEAL HOME BUTTON
-   =============================== */
+/* Top hover strip + back button */
 .reveal-top {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 35px;
+    top: 0; left: 0;
+    width: 100%; height: 35px;
     z-index: 9999;
 }
 .back-home {
@@ -44,9 +40,7 @@ body {
     top: 20px;
 }
 
-/* ===============================
-   HERO
-   =============================== */
+/* Header image and overlay */
 header {
     position: relative;
     width: 100%;
@@ -67,40 +61,27 @@ header::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
     color: white;
-    padding: 20px;
+    text-align: center;
 }
 .header-text h1 {
+    margin: 0;
     font-size: 2.8rem;
     font-weight: 700;
-    margin: 0;
     text-shadow: 0 0 12px rgba(0,0,0,0.55);
 }
 .header-text .sub {
+    margin-top: 10px;
     font-size: 1.2rem;
     opacity: 0.9;
-    margin-top: 10px;
 }
 .header-text .byline {
+    margin-top: 15px;
     font-size: 1.1rem;
     opacity: 0.9;
-    margin-top: 15px;
-}
-.caption {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: rgba(0,0,0,0.55);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.9rem;
 }
 
-/* ===============================
-   ARTICLE BODY
-   =============================== */
+/* Article container */
 .article {
     max-width: 900px;
     width: 90%;
@@ -108,26 +89,21 @@ header::before {
     font-size: 1.15rem;
 }
 
-/* ===============================
-   PRETTY MP3 PLAYER
-   =============================== */
+/* MP3 player styling */
 .player {
     background: #f7f7f7;
     padding: 25px;
     border-radius: 18px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
     margin: 40px 0;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
 }
-
 .controls {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-
 .play-btn {
-    width: 60px;
-    height: 60px;
+    width: 60px; height: 60px;
     border-radius: 50%;
     border: none;
     background: #ff4f81;
@@ -141,13 +117,11 @@ header::before {
 .play-btn:active {
     transform: scale(0.95);
 }
-
 .bar-wrap {
     flex: 1;
 }
 .progress {
-    width: 100%;
-    height: 8px;
+    width: 100%; height: 8px;
     background: #ddd;
     border-radius: 6px;
     cursor: pointer;
@@ -158,21 +132,30 @@ header::before {
     background: #ff4f81;
     border-radius: 6px;
 }
-
 .time {
-    font-size: 0.95rem;
     width: 60px;
     text-align: right;
 }
 
-/* MOBILE */
-@media(max-width: 600px) {
-    .header-text h1 {
-        font-size: 2rem;
-    }
-    .header-text .sub {
-        font-size: 1rem;
-    }
+/* Blur wrapper + overlay */
+.blur-box {
+    position: relative;
+}
+.blur-target {
+    filter: blur(20px);
+    pointer-events: none;
+}
+.comingsoon-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.92);
+    padding: 22px 30px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 </style>
 </head>
@@ -188,39 +171,42 @@ header::before {
         <div class="sub">A storytelling-style podcast about screen life in Gen Z</div>
         <div class="byline">By Jaewon Lee</div>
     </div>
-
 </header>
 
 <div class="article">
 
-<p><strong>Episode Summary:</strong></p>
-<p>
-Phones are everywhere — in class, at home, in our pockets, in our hands, in our brains.
-This episode dives into how our generation interacts with constant connectivity,
-how it helps, how it harms, and how it shapes our everyday school life.
-</p>
-
 <h2>🎧 Listen to Episode #1</h2>
 
-<!-- ===============================
-     CUSTOM PODCAST PLAYER
-     =============================== -->
-<div class="player">
-    
-    <audio id="audio">
-        <source src="we-live-on-our-phones.mp3" type="audio/mpeg">
-    </audio>
+<!-- Blurred MP3 player -->
+<div class="blur-box">
 
-    <div class="controls">
-        <button class="play-btn" id="playBtn">▶</button>
+    <div class="blur-target">
+        <div class="player">
 
-        <div class="bar-wrap">
-            <div class="progress" id="progress">
-                <div class="progress-fill" id="progressFill"></div>
+            <audio id="audio">
+                <source src="we-live-on-our-phones.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="controls">
+                <button class="play-btn" id="playBtn">▶</button>
+
+                <div class="bar-wrap">
+                    <div class="progress" id="progress">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="time" id="time">0:00</div>
             </div>
-        </div>
 
-        <div class="time" id="time">0:00</div>
+        </div>
+    </div>
+
+    <div class="comingsoon-overlay">
+        COMING SOON<br>
+        <span style="font-size:1rem; font-weight:500;">
+            This episode will be available when it’s on The Emery.
+        </span>
     </div>
 
 </div>
@@ -228,6 +214,7 @@ how it helps, how it harms, and how it shapes our everyday school life.
 </div>
 
 <script>
+/* Player logic */
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("playBtn");
 const progress = document.getElementById("progress");
