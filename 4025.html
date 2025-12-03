@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition Era Discovery</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #222;
+    line-height: 1.7;
+}
+
+/* ===============================
+   HOVER-REVEAL BACK TO HOME BUTTON
+   =============================== */
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 9999;
+}
+.back-home {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    z-index: 10000;
+}
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    top: 20px;
+}
+
+/* ===============================
+   HEADER IMAGE + OVERLAY
+   =============================== */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/4025.jpg");
+    background-size: cover;
+    background-position: center;
+}
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+/* ===============================
+   TITLE + BYLINE
+   =============================== */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.header-text h1 {
+    margin: 0;
+    font-size: 2.7rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0,0,0,0.55);
+}
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.92;
+}
+.emery-button {
+    margin-top: 18px;
+}
+.emery-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.emery-button a:hover {
+    background: #e04372;
+}
+
+/* ===============================
+   CAPTION ON IMAGE
+   =============================== */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    max-width: 300px;
+}
+
+/* ===============================
+   ARTICLE BODY
+   =============================== */
+.article {
+    max-width: 900px;
+    width: 90%;
+    margin: 60px auto;
+    font-size: 1.15rem;
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+@media(max-width: 600px) {
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Hover zone for back button -->
+<div class="reveal-top"></div>
+
+<!-- Back to home -->
+<a class="back-home" href="index.html">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>Dr. Vehlin Doh’s Team Discovers Newly Excavated “Transition Era”</h1>
+        <div class="byline">By Jaewon Lee</div>
+    </div>
+
+    <div class="caption">
+        Image of Vehlin Doh and her team excavating the so-called “Chromebook” and “Starbucks.”<br>
+        Photo by Jaewon Lee
+    </div>
+</header>
+
+<div class="article">
+
+<p><em>Editor’s note: What we once called “normal life” is now ancient history—this report invites readers of 4025 to glimpse the strange, screen-filled struggles of early digital civilization.</em></p>
+
+<p>A team of historians and archaeologists announced Monday that they have formally designated a newly uncovered stretch of history, spanning from the early 21st century to the 22nd century as a distinctive historical period, now officially named the Transition Era.</p>
+
+<p>The announcement follows the completion of a decade-long excavation project of the region formerly known as North America, where preserved evidence from the year 2025 revealed previously unknown types of communication, education, and digital behavior. Researchers say that the artifacts represent a turning point between physical-based civilization and digital-based civilization.</p>
+
+<p>“This is a major moment of modern historical research,” lead archaeologist on the excavation project Dr. Vehlin Doh said. “The data [from 2025] doesn’t fit neatly into any other previously defined era. It wasn’t fully analog. It wasn’t fully digital. The technology at the time was in between. We now recognize this as a new chapter of human evolution.”</p>
+
+<p>Among the most interesting finds was a school-issued device called a “Chromebook,” a lightweight device seemingly designed for easy media consumption, learning, and communication. Unlike modern technology, this device required physical keystrokes in order for the computer to function properly and often lagged and crashed during use.</p>
+
+<p>The team also discovered handwritten school notes, suggesting that the people at the time didn’t do everything digitally. One outstanding note was a journal entry from a possible seventh or eighth grade student. The note read:</p>
+
+<p><em>“Parents ground me from watching YouTube for six months. This is actual torture. If I don’t survive, someone please tell MrBeast that I tried.”</em></p>
+
+<p>Doh said that the entry highlights the dependence human teenagers had on technology, even though it hadn’t advanced to a fully comfortable state.</p>
+
+<p>The Transition Era was exceptionally bizarre, as humans desired for things that did not even exist yet.</p>
+
+<p>“It was an age of friction,” Doh said. “Humans had the ability to contact via technology like we do now, but they always had to wait for the connection. They relied on screens, but the screens did not move with them. They always had to do something with their hands, rather than just telepathically commanding the computer to do jobs like we do now.”</p>
+
+<p>Another five-year project has been approved to fully investigate and analyze the newfound evidence the team has found. Moreover, the team will also begin secondary projects exploring what human life without using technology was like back then.</p>
+
+<p>The team has already discovered a non-technological building named “Starbucks,” yet they do not know what the building’s original purpose was.</p>
+
+<p>More information will be shared as they become available.</p>
+
+</div>
+
+</body>
+</html>
