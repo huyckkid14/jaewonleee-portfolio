@@ -7,21 +7,18 @@
 
 <style>
 /* =======================================================
-   GLOBAL STYLES
+   GLOBAL
    ======================================================= */
 body {
     margin: 0;
     padding: 0;
     background: #fff9f4;
     font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
 }
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 /* =======================================================
-   NAVIGATION BAR
+   NAVIGATION
    ======================================================= */
 .nav {
     display: flex;
@@ -39,7 +36,7 @@ html {
 }
 
 /* =======================================================
-   HERO SECTION
+   HERO
    ======================================================= */
 .hero {
     position: relative;
@@ -67,7 +64,7 @@ html {
 .hero h2 { top: 40%; right: 10%; }
 .hero h3 { bottom: 10%; left: 5%; }
 
-/* Collage slices */
+/* Collage */
 .collage {
     width: 100%;
     max-width: 500px;
@@ -89,7 +86,7 @@ html {
 }
 
 /* =======================================================
-   BIO SECTION
+   BIO SECTIONS
    ======================================================= */
 .bio-section {
     padding: 100px 20px 40px;
@@ -109,9 +106,7 @@ html {
     gap: 30px;
 }
 
-/* Bio image area */
 .bio-image {
-    background-image: url("https://thehuronemery.com/wp-content/uploads/2025/10/jaewon-1200x800.jpeg");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -119,7 +114,6 @@ html {
     border-radius: 18px;
 }
 
-/* Text */
 .bio-text h2 {
     margin: 0 0 15px;
     font-size: 2.4rem;
@@ -134,7 +128,6 @@ html {
     margin-bottom: 18px;
 }
 
-/* Emery button */
 .emery-btn {
     display: inline-block;
     margin-top: 15px;
@@ -153,9 +146,9 @@ html {
 }
 
 /* =======================================================
-   PORTFOLIO SECTION HEADER
+   SECTION HEADERS
    ======================================================= */
-.portfolio-header {
+.section-title {
     text-align: center;
     margin-top: 100px;
     font-size: 3.2rem;
@@ -181,7 +174,6 @@ html {
     margin-bottom: 35px;
     border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    transition: 0.3s;
 }
 .piece:hover {
     transform: translateY(-8px);
@@ -203,14 +195,12 @@ html {
 }
 .piece p {
     font-size: 1.1rem;
-    line-height: 1.6;
     color: #4a2f54;
     margin-top: 10px;
-    font-weight: 500;
 }
 
 /* =======================================================
-   CONTACT SECTION
+   CONTACT
    ======================================================= */
 .contact-section {
     padding: 120px 40px;
@@ -229,7 +219,6 @@ html {
     color: rgba(255,255,255,0.9);
 }
 
-/* Contact card */
 .contact-card {
     background: white;
     color: #4a2f54;
@@ -269,13 +258,14 @@ html {
     background: #9158ff;
     color: white;
     font-weight: 700;
-    transition: 0.3s;
 }
 .contact-card button:hover {
     background: #7c45e3;
 }
 
-/* Footer */
+/* =======================================================
+   FOOTER
+   ======================================================= */
 .footer {
     text-align: center;
     padding: 40px;
@@ -283,13 +273,11 @@ html {
     color: #777;
 }
 
-/* Make portfolio links same color and only underline on hover */
+/* Portfolio links */
 .piece a {
-    color: inherit;       /* same color as the heading */
+    color: inherit;
     text-decoration: none;
-    font-weight: inherit; /* keeps it matching */
 }
-
 .piece a:hover {
     text-decoration: underline;
 }
@@ -299,19 +287,17 @@ html {
 
 <body>
 
-<!-- =======================================================
-     NAVIGATION BAR
-     ======================================================= -->
+<!-- NAVIGATION -->
 <div class="nav">
     <a href="#about">About</a>
-    <a href="#bio">Bio</a>
-    <a href="#writing">Writing</a>
+    <a href="#bio">Huron Bio</a>
+    <a href="#writing">Huron Work</a>
+    <a href="#cougarbio">Cougar Bio</a>
+    <a href="#cougarwork">Cougar Work</a>
     <a href="#contact">Contact</a>
 </div>
 
-<!-- =======================================================
-     HERO SECTION
-     ======================================================= -->
+<!-- HERO -->
 <div class="hero" id="about">
     <h1>This is</h1>
     <h2>MY</h2>
@@ -327,14 +313,10 @@ html {
     </div>
 </div>
 
-<!-- =======================================================
-     BIO SECTION
-     ======================================================= -->
+<!-- HURON BIO -->
 <div id="bio" class="bio-section">
-
     <div class="bio-card">
-        <div class="bio-image"></div>
-
+        <div class="bio-image" style="background-image: url('https://thehuronemery.com/wp-content/uploads/2025/10/jaewon-1200x800.jpeg');"></div>
         <div class="bio-text">
             <h2>Jaewon Lee — News Editor</h2>
 
@@ -346,13 +328,7 @@ html {
 
             <p>
                 Outside of journalism, Jaewon plays the viola, codes apps and games, makes Christian lyric videos, 
-                and volunteers actively in his community. His favorite ice cream flavor is vanilla, 
-                and his favorite book series is <em>Spy School</em>.
-            </p>
-
-            <p>
-                Jaewon also runs a growing YouTube channel where he creates AI-powered worship music, animations, 
-                and tech-themed videos. As of August 2025, the channel has over 36 subscribers.
+                and volunteers actively in his community.
             </p>
 
             <a href="https://thehuronemery.com/staff_name/jaewon-lee/" class="emery-btn" target="_blank">
@@ -360,26 +336,18 @@ html {
             </a>
         </div>
     </div>
-
 </div>
 
-<!-- =======================================================
-     PORTFOLIO SECTION HEADER
-     ======================================================= -->
-<h1 class="portfolio-header" id="writing">My Work</h1>
+<!-- HURON WORK -->
+<h1 class="section-title" id="writing">My Work — The Huron Emery</h1>
 
-<!-- =======================================================
-     PORTFOLIO CONTENT
-     ======================================================= -->
-<div class="container" id="portfolio">
+<div class="container">
 
     <div class="piece">
         <div class="thumb" style="background-image: url('images/podcast.jpg');"></div>
         <div>
             <h3>We Live On Our Phones — Podcast</h3>
-            <p>A storytelling-style podcast episode examining the everyday influence of smartphones on modern student behavior. 
-               This piece uses pacing, tone, and sound design to create a narrative experience blending humor, relatability,
-               and real student voices.</p>
+            <p>A narrative-style podcast exploring modern student screen culture.</p>
         </div>
     </div>
 
@@ -387,8 +355,7 @@ html {
         <div class="thumb" style="background-image: url('images/phonepockets.jpg');"></div>
         <div>
             <h3><a href="cell-phone">Huron cell phone guideline gets an upgrade</a></h3>
-            <p>The phone policy is here at Huron! Students now have to put their phones in a designated pocket number at the start of class. 
-               Click the title to learn more.</p>
+            <p>The updated phone policy reshapes how students interact with technology in class.</p>
         </div>
     </div>
 
@@ -396,8 +363,7 @@ html {
         <div class="thumb" style="background-image: url('images/scam.jpg');"></div>
         <div>
             <h3><a href="aaps-email-scam">AAPS students caught caught in October email scam</a></h3>
-            <p>Early October 2025, AAPS students got their accounts hacked and sent many scam emails. 
-               Click the title to learn what happened in detail.</p>
+            <p>A cybersecurity issue affected AAPS students across the district.</p>
         </div>
     </div>
 
@@ -405,8 +371,7 @@ html {
         <div class="thumb" style="background-image: url('images/4025.jpg');"></div>
         <div>
             <h3><a href="4025.html">Dr. Vehlin Doh’s Team Discovers Newly Excavated “Transition Era”</a></h3>
-            <p>A piece exploring how the world of 4025 might dwell on the discovery of our 2025 daily life.
-               Click the title to see how they react.</p>
+            <p>A futuristic report imagining how the year 4025 views 2025 society.</p>
         </div>
     </div>
 
@@ -414,8 +379,7 @@ html {
         <div class="thumb" style="background-image: url('images/crowley.jpg');"></div>
         <div>
             <h3><a href="around-the-world-mr-crowley">Around the world: “international” teacher Daniel Crowley</a></h3>
-            <p>A profile of one of Huron’s most globally experienced teachers. 
-               Highlights travel, culture, and education philosophies.</p>
+            <p>A profile of a Huron teacher with a global perspective.</p>
         </div>
     </div>
 
@@ -423,40 +387,77 @@ html {
         <div class="thumb" style="background-image: url('images/walter.jpg');"></div>
         <div>
             <h3><a href="walter-mcmorrough">Sophomore Saturday: Walter McMorrough</a></h3>
-            <p>Introducing Walter McMorrough, a Huron sophomore dedicated at almost everything!
-               Click the title to learn more about Mc Morrough.</p>
+            <p>Spotlighting sophomore Walter McMorrough and his school experiences.</p>
         </div>
     </div>
 
 </div>
 
-<!-- =======================================================
-     CONTACT SECTION
-     ======================================================= -->
-<div id="contact" class="contact-section">
+<!-- COUGAR STAR BIO -->
+<div id="cougarbio" class="bio-section">
+    <div class="bio-card">
+        <div class="bio-image" style="background-image: url('https://thecougarstar.com/wp-content/uploads/2024/11/jaewon-lee-1200x800.jpg');"></div>
 
-    <h2>Contact Me</h2>
-    <p>If you’d like to reach out for anything, feel free to leave a message through the form. You can also directly email me at 320512@aaps.k12.mi.us. I check my email regularly.</p>
+        <div class="bio-text">
+            <h2>Jaewon Lee — Writer at The Cougar Star</h2>
 
-    <div class="contact-card">
+            <p>
+                Jaewon Lee graduated from Clague Middle School in 2025, where he spent three years writing for 
+                <em>The Cougar Star</em>. He began his journalism journey there, publishing opinion pieces, features, and 
+                student-interest stories.
+            </p>
 
-        <h3>Send a Message</h3>
+            <p>
+                During his time at Clague, he was known for his creativity, persuasive writing, and tech-themed storytelling. 
+                When not writing, he was usually coding games, editing videos, or drawing.
+            </p>
 
-        <form action="https://formspree.io/f/mblnygrg" method="POST">
+            <p>
+                He speaks both Korean and English, and continues to write, design, and create across multiple platforms.
+            </p>
 
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="_replyto" placeholder="Your email" required>
-            <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+            <a href="https://thecougarstar.com/staff_name/jaewon-lee/" class="emery-btn" target="_blank">
+                View on The Cougar Star
+            </a>
+        </div>
+    </div>
+</div>
 
-            <button type="submit">Send Message</button>
-        </form>
+<!-- COUGAR STAR WORK -->
+<h1 class="section-title" id="cougarwork">My Work — The Cougar Star</h1>
 
+<div class="container">
+
+    <div class="piece">
+        <div class="thumb" style="background-image: url('images/space.png');"></div>
+        <div>
+            <h3><a href="space.html">No, we don’t need ‘vacations’ in space</a></h3>
+            <p>An opinion column arguing against commercial space tourism for safety, cost, and environmental reasons.</p>
+        </div>
     </div>
 
 </div>
 
+<!-- CONTACT -->
+<div id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>If you’d like to reach out, feel free to send a message. I check my email regularly.</p>
+
+    <div class="contact-card">
+        <h3>Send a Message</h3>
+
+        <form action="https://formspree.io/f/mblnygrg" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="_replyto" placeholder="Your email" required>
+            <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
-    © 2025 Jaewon Lee — Student Journalist at The Huron Emery
+    © 2025 Jaewon Lee — Student Journalist at The Huron Emery & The Cougar Star
 </div>
 
 </body>
