@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clague's 8th Grade Concert</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+    color: #222;
+}
+
+/* -------------------------------------------------------
+   BACK TO HOME OVERLAY (HIDDEN UNTIL TOP HOVER)
+--------------------------------------------------------*/
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;          /* hover strip at very top */
+    z-index: 9999;
+}
+
+.back-home {
+    position: fixed;
+    top: 20px;             /* stays in one place */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 26px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    transition: opacity 0.25s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+/* show when hovering at very top OR when hovering the button itself */
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* -------------------------------------------------------
+   HERO SECTION
+--------------------------------------------------------*/
+header {
+    height: 60vh;
+    background: linear-gradient(135deg, #ff4f81, #9158ff, #27d7c8);
+    background-size: 250% 250%;
+    animation: heroAnim 12s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+@keyframes heroAnim {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.header-text h1 { font-size: 2.8rem; margin: 0; }
+.header-text .sub { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+.header-text .byline { margin-top: 10px; opacity: 0.85; }
+
+/* -------------------------------------------------------
+   PAGE LAYOUT
+--------------------------------------------------------*/
+.article {
+    max-width: 900px;
+    margin: 50px auto;
+    width: 90%;
+}
+
+/* -------------------------------------------------------
+   VIDEO PLAYER
+--------------------------------------------------------*/
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+video {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------
+   CAPTIONS
+--------------------------------------------------------*/
+.caption-overlay {
+    position: absolute;
+    bottom: 8%;
+    max-width: 600px;
+    left: 20px;
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.35;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.9);
+    pointer-events: none;
+    padding-right: 20px;
+}
+
+/* -------------------------------------------------------
+   CONTROLS
+--------------------------------------------------------*/
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    margin-top: 10px; /* ensure it is clearly BELOW the video */
+}
+
+button.play {
+    background: #ff4f81;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+button.play:hover {
+    background: #e83d70;
+}
+
+.progress {
+    flex: 1;
+    height: 6px;
+    background: #444;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #ff4f81;
+    border-radius: 5px;
+}
+
+.time {
+    min-width: 85px;
+    text-align: right;
+}
+
+.speed {
+    background: #222;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.speed:hover {
+    border-color: #ff4f81;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACK TO HOME (hidden initially, revealed on top hover) -->
+<div class="reveal-top"></div>
+<a class="back-home" href="index.html">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>Clague's 8th Grade Concert</h1>
+        <div class="sub">Clague Middle School had an 8th grade concert on November 19th. Let’s talk about it.</div>
+        <div class="byline">By Jaewon Lee</div>
+    </div>
+</header>
+
+<div class="article">
+
+<div class="video-wrapper">
+    <video id="video" src="https://news.leefamilypress.com/videos/concert.mp4"></video>
+    <div class="caption-overlay" id="captionText"></div>
+</div>
+
+<!-- PLAYER CONTROLS (BELOW VIDEO) -->
+<div class="controls">
+    <button class="play" id="playBtn">▶</button>
+
+    <div class="progress" id="progress">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="time" id="time">0:00 / 0:00</div>
+
+    <select id="speed" class="speed">
+        <option value="0.5">0.5x</option>
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+    </select>
+</div>
+
+<br><br>
+
+<!-- Buttons  -->
+<a href="https://thecougarstar.com/4227/news/clague-eighth-grade-ensembles-perform-on-nov-19/" 
+   target="_blank"
+   style="
+        display:inline-block;
+        padding:14px 24px;
+        background:#9158ff;
+        color:white;
+        border-radius:10px;
+        font-weight:600;
+        text-decoration:none;
+        margin-right:12px;
+   ">
+View on The Cougar Star*</a>
+
+<a href="https://youtu.be/HZwOFFQxe7I"
+   target="_blank"
+   style="
+        display:inline-block;
+        padding:14px 24px;
+        background:#27d7c8;
+        color:white;
+        border-radius:10px;
+        font-weight:600;
+        text-decoration:none;
+   ">
+Watch on YouTube</a>
+
+<p style="opacity:0.7; font-size:0.9rem; margin-top:8px;">
+*Uses different version of the video
+</p>
+
+</div>
+
+
+<script id="vttData" type="text/vtt-custom">
+WEBVTT
+
+00:39.000 --> 00:43.000
+Clague Middle School’s 8th Grade Concert took  place on November 19th, featuring a diverse 
+
+00:43.000 --> 00:49.000
+lineup of performances by the Band, Orchestra,  Choir, Noteworthy, and World Drumming. 
+
+00:49.000 --> 00:55.000
+“Honestly, I liked World Drumming because  we did much better than we did in class,” 
+
+00:55.000 --> 00:57.000
+Clague eighth grader Elias Bradley stated.  “I think everyone did great. Choir messed up 
+
+00:57.000 --> 01:05.000
+a little bit in a few parts—specifically me—but  other than that, I think everyone did awesome.” 
+
+01:05.000 --> 01:14.000
+The performances were a great display of talent  and dedication by Clague’s 8th-grade students, 
+
+01:14.000 --> 01:19.000
+leaving the audience thoroughly  impressed and entertained. 
+
+01:19.000 --> 01:25.000
+“My favorite part was probably being  in World Drumming,” 8th grade student 
+
+01:25.000 --> 01:36.000
+Liam Dooley stated. “It’s really fun—[and  it’s] performing without [a conductor].” 
+
+01:36.000 --> 01:42.000
+The eighth grade concert was a night to  remember, showcasing the talents of Clague’s 
+
+01:42.000 --> 01:50.000
+eighth school students across multiple musical  disciplines. Each performance demonstrated the 
+
+01:50.000 --> 02:02.000
+hard work and delicate dedication thes young  musicians had put in their performance. The 
+
+02:02.000 --> 02:09.000
+Choir delivered a heartfelt set, with  highlights including Nine Hundred Miles 
+
+02:09.000 --> 02:18.000
+and Hashivenu. Despite a few minor hiccups,  their passion and dedication shone through. 
+
+02:18.000 --> 02:24.000
+Noteworthy added a modern twist to the  evening with their rendition of High Hopes, 
+
+02:24.000 --> 02:29.000
+blending energy and precision for an  engaging and memorable performance. 
+
+02:29.000 --> 02:34.000
+The World Drumming Ensemble brought infectious  energy to the stage with their lineup, 
+
+02:34.000 --> 02:41.000
+which included Patscha and Saturday Night.  For many performers, the opportunity 
+
+02:41.000 --> 02:50.000
+to showcase their skills in this freeform  style was a standout moment of the concert. 
+
+02:50.000 --> 02:59.000
+The Band demonstrated their depth and musicality  with performances of Alamo March, Critical Call, 
+
+02:59.000 --> 03:08.000
+and Starscapes. Their cohesive sound highlighted  the unity and talent of the ensemble. 
+
+03:08.000 --> 03:14.000
+Closing the evening, the Orchestra wowed  the audience with a mix of classic and 
+
+03:14.000 --> 03:18.000
+contemporary pieces, including  Water on Mars, Greensleeves, 
+
+03:18.000 --> 03:26.000
+and Boreas. Their performance brought  the night to a triumphant conclusion. 
+
+03:26.000 --> 03:32.000
+The 8th Grade Concert was more than just a  performance—it was a celebration of creativity, 
+
+03:32.000 --> 03:38.000
+collaboration, and the power of music to  bring people together. Congratulations to 
+
+03:38.000 --> 03:42.000
+all the performers for an unforgettable evening!
+</script>
+
+<script>
+function parseVTT(text) {
+    const lines = text.split("\n");
+    const cues = [];
+    let i = 0;
+
+    while (i < lines.length) {
+        if (lines[i].includes("-->")) {
+            const times = lines[i].split("-->");
+            const start = toSec(times[0].trim());
+            const end = toSec(times[1].trim());
+
+            i++;
+            let payload = "";
+            while (i < lines.length && lines[i].trim() !== "") {
+                payload += lines[i] + "\n";
+                i++;
+            }
+            cues.push({ start, end, text: payload.trim() });
+        }
+        i++;
+    }
+    return cues;
+}
+
+function toSec(t) {
+    const parts = t.split(":");
+    let total = 0;
+
+    const sec = parts.pop().split(".");
+    total += Number(sec[0]);
+    if (sec[1]) {
+        total += Number("0." + sec[1]);
+    }
+
+    if (parts.length > 0) {
+        total += Number(parts.pop()) * 60;
+    }
+    if (parts.length > 0) {
+        total += Number(parts.pop()) * 3600;
+    }
+
+    return total;
+}
+
+const cues = parseVTT(document.getElementById("vttData").textContent);
+
+/* -------------------------------------------------------
+   VIDEO LOGIC
+--------------------------------------------------------*/
+const video   = document.getElementById("video");
+const playBtn = document.getElementById("playBtn");
+const progress = document.getElementById("progress");
+const fill    = document.getElementById("progressFill");
+const timeEl  = document.getElementById("time");
+const speed   = document.getElementById("speed");
+const caption = document.getElementById("captionText");
+
+function fmt(t) {
+    let m = Math.floor(t / 60);
+    let s = Math.floor(t % 60);
+    return m + ":" + (s < 10 ? "0" + s : s);
+}
+
+video.addEventListener("loadedmetadata", () => {
+    timeEl.textContent = "0:00 / " + fmt(video.duration);
+});
+
+video.addEventListener("timeupdate", () => {
+    if (video.duration > 0) {
+        fill.style.width = (video.currentTime / video.duration) * 100 + "%";
+    } else {
+        fill.style.width = "0%";
+    }
+    timeEl.textContent = fmt(video.currentTime) + " / " + fmt(video.duration);
+
+    let text = "";
+    for (let c of cues) {
+        if (video.currentTime >= c.start && video.currentTime <= c.end) {
+            text = c.text;
+            break;
+        }
+    }
+    caption.textContent = text;
+});
+
+function togglePlay() {
+    if (video.paused) {
+        video.play();
+        playBtn.textContent = "⏸";
+    } else {
+        video.pause();
+        playBtn.textContent = "▶";
+    }
+}
+
+playBtn.addEventListener("click", togglePlay);
+video.addEventListener("click", togglePlay);
+
+/* SPACEBAR PLAY/PAUSE */
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        e.preventDefault();
+        togglePlay();
+    }
+});
+
+/* SEEK BAR */
+progress.addEventListener("click", (e) => {
+    const r = progress.getBoundingClientRect();
+    const p = (e.clientX - r.left) / r.width;
+    video.currentTime = p * video.duration;
+});
+
+/* SPEED */
+speed.addEventListener("change", () => {
+    video.playbackRate = speed.value;
+});
+</script>
+
+</body>
+</html>
