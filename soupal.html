@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Soupal named new assistant principal of Clague</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    line-height: 1.7;
+    color: #222;
+}
+
+/* ===============================
+   HOVER ZONE FOR BACK BUTTON
+   =============================== */
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 9998;
+}
+
+/* BACK TO HOME BUTTON */
+.back-home {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    z-index: 9999;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    top: 20px;
+    pointer-events: auto;
+}
+
+/* ===============================
+   HERO
+   =============================== */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/soupal.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.6)
+    );
+}
+
+/* CENTER TEXT */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* View on Cougar Star button */
+.view-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 24px;
+    background: #9158ff;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.view-btn:hover {
+    background: #7c45e3;
+}
+
+/* CAPTION */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 320px;
+}
+
+/* ARTICLE BODY */
+.article {
+    max-width: 900px;
+    width: 90%;
+    margin: 60px auto;
+    font-size: 1.15rem;
+}
+
+/* VIDEO PLAYER */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    margin: 50px 0 10px;
+}
+
+video {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+/* CAPTION OVERLAY */
+.caption-overlay {
+    position: absolute;
+    bottom: 8%;
+    max-width: 680px;
+    left: 20px;
+    right: 20px;
+    text-align: left;
+    font-size: 1.35rem;
+    line-height: 1.35;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.95);
+    pointer-events: none;
+    padding-right: 10px;
+    white-space: pre-wrap;
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border-radius: 12px;
+}
+
+button.play {
+    background: #ff4f81;
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.progress {
+    flex: 1;
+    height: 6px;
+    background: #444;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #ff4f81;
+    border-radius: 5px;
+}
+
+.time {
+    min-width: 90px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+    .caption-overlay {
+        font-size: 1.05rem;
+        left: 14px;
+        right: 14px;
+        bottom: 9%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="reveal-top"></div>
+<a href="index.html" class="back-home">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>Ryan Soupal named new assistant principal of Clague</h1>
+        <div class="byline">By Jaewon Lee</div>
+
+        <a class="view-btn"
+           href="https://thecougarstar.com/4041/feature/ryan-soupal-named-new-assistant-principal-of-clague/"
+           target="_blank">
+            View on The Cougar Star
+        </a>
+    </div>
+
+    <div class="caption">
+        Ryan Soupal joins the Clague team after previously working at Scarlett Middle School.<br>
+        Photo by Yuri Kim
+    </div>
+</header>
+
+<div class="article">
+
+<p>Clague Middle School is excited to welcome Ryan Soupal as its new assistant principal. With 23 years of experience in education, Soupal brings a wealth of knowledge and a passion for working with diverse students and staff.</p>
+
+<p>Soupal’s career in education is marked by a commitment to fostering student growth and supporting educational communities. His experience includes various leadership roles, which he believes have prepared him for this position at Clague.</p>
+
+<p>“I think getting to work with such a diverse group of students and staff excites me the most,” Soupal said. “It gives you the ability to learn about lots of different people and work with really great students and staff here at Clague.”</p>
+
+<p>His enthusiasm for diversity reflects the core values of Clague Middle School, where different backgrounds and perspectives contribute to a rich learning environment.</p>
+
+<p>“I aim to continue to serve in this role and serve this community, and to become the biggest supporter of the Clague Cougars,” he said.</p>
+
+<p>Clague parent Sara-Beth Badalamente worked with him over the summer at the Summer Learning Institute.</p>
+
+<p>“I’ve seen firsthand the connections Mr. Soupal makes with students,” Badalamente said. “He wants kids to succeed and he knows how to make an environment for students to be their best selves.”</p>
+
+<p>Contrary to student belief, Soupal did not teach at Scarlett Middle School.</p>
+
+<p>“I worked as the International Baccalaureate coordinator, helping Scarlett become an authorized International Baccalaureate World School,” Soupal said.</p>
+
+<p>“I felt like becoming the assistant principal of Clague was the next step in my educational and professional journey,” Soupal said.</p>
+
+<p>“Getting to meet all of the great students and staff here is my favorite part,” he said.</p>
+
+<p>“I am very excited to know that Mr. Soupal will be our new assistant principal,” Benqiao Lin said.</p>
+
+<p>With his dedication and extensive experience, Clague Middle School anticipates positive developments under Soupal’s leadership.</p>
+
+<div class="video-wrapper">
+    <video id="video" src="https://news.leefamilypress.com/videos/soupal.mp4"></video>
+    <div class="caption-overlay" id="captionText"></div>
+</div>
+
+<div class="controls">
+    <button class="play" id="playBtn">▶</button>
+    <div class="progress" id="progress">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="time" id="time">0:00 / 0:00</div>
+</div>
+
+</div>
+
+<script id="vttData" type="text/vtt-custom">
+WEBVTT
+
+00:13.000 --> 00:17.000
+Clague Middle School is excited to welcome Ryan Soupal as its
+
+00:17.000 --> 00:22.000
+new Assistant Principal. With 23 years of experience in education,
+
+00:22.000 --> 00:30.000
+Soupal brings a wealth of knowledge and a passion for working with diverse students and staff.
+
+00:30.000 --> 00:43.000
+"My name is Ryan Soupal. I am originally from Troy, Michigan,
+and I have been in education for 23 years."
+
+00:43.000 --> 00:50.000
+Soupal's career in education is marked by a commitment to fostering student growth
+
+00:50.000 --> 00:55.000
+and supporting educational communities. His experience includes various leadership roles,
+
+00:55.000 --> 01:04.000
+which he believes have prepared him for this position at Clague.
+
+01:04.000 --> 01:13.000
+"I think getting to work with such a diverse group of students and staff
+excites me the most. It gives you the ability to learn about lots
+
+01:13.000 --> 01:25.000
+of different people and work with really great students and staff here at Clague."
+
+01:25.000 --> 01:30.000
+His enthusiasm for diversity reflects the core values of Clague Middle School,
+
+01:30.000 --> 01:41.000
+where different backgrounds and perspectives contribute to a rich learning environment. Mr.
+Soupal views this diversity as an opportunity not only to support students but also to learn
+from them and the staff members who bring unique experiences to the table.
+
+01:49.000 --> 01:58.000
+"I aim to continue to serve in this role and serve this community,
+and to become the biggest supporter of the Clague Cougars."
+
+01:58.000 --> 02:15.000
+Soupal’s dedication to the Clague community is evident in his intention to be a visible
+leader. He recognizes the importance of building strong relationships with students,
+staff, and parents to create a supportive educational environment.
+
+02:24.000 --> 02:36.000
+Contrary to student belief, Soupal did not actually teach at Scarlett
+Middle School. He clarified his role there:
+
+02:36.000 --> 02:51.000
+"I actually didn't teach at Scarlett. I worked as the International Baccalaureate coordinator,
+helping Scarlett become an authorized International Baccalaureate World School. I
+also helped all of the teachers learn how to teach in an International Baccalaureate World School."
+
+03:00.000 --> 03:08.000
+Soupal stated that the main reason he applied for Assistant Principal was
+
+03:08.000 --> 03:20.000
+because he has always accepted leadership roles throughout his educational journey,
+
+03:20.000 --> 03:25.000
+as he explained in the interview:
+
+03:25.000 --> 03:38.000
+"Throughout my entire teaching career, I've always accepted
+leadership roles as they come around, and I felt like becoming the Assistant
+Principal of Clague was the next step in my educational and professional journey."
+
+03:46.000 --> 03:57.000
+His drive for professional growth is a testament to his commitment to
+education and his desire to take on greater responsibilities. Soupal’s journey reflects a
+continuous pursuit of excellence, not just for himself but for the entire school community.
+
+04:05.000 --> 04:12.000
+"Getting to meet all of the great students
+and staff here is my favorite part. I've met so many wonderful people,
+
+04:12.000 --> 04:21.000
+and I look forward to continuing to meet more and more of the staff and students here."
+
+04:21.000 --> 04:33.000
+With his dedication and extensive experience, Clague Middle School anticipates positive
+developments under Soupal's leadership as Assistant Principal. His commitment to fostering
+an inclusive and supportive environment promises to enhance the educational experience for all.
+</script>
+
+<script>
+function parseVTT(text) {
+    const lines = text.replace(/\r/g, "").split("\n");
+    const cues = [];
+    let i = 0;
+
+    while (i < lines.length) {
+        const line = lines[i].trim();
+
+        if (line.includes("-->")) {
+            const parts = line.split("-->");
+            const start = toSec(parts[0].trim());
+            const end = toSec(parts[1].trim());
+
+            i++;
+            let payload = [];
+            while (i < lines.length && lines[i].trim() !== "") {
+                payload.push(lines[i]);
+                i++;
+            }
+
+            cues.push({ start, end, text: payload.join("\n").trim() });
+        }
+
+        i++;
+    }
+
+    return cues;
+}
+
+function toSec(t) {
+    const parts = t.split(":");
+    let total = 0;
+
+    const last = parts.pop();
+    const secParts = last.split(".");
+    total += Number(secParts[0]);
+    if (secParts[1]) total += Number("0." + secParts[1]);
+
+    if (parts.length > 0) total += Number(parts.pop()) * 60;
+    if (parts.length > 0) total += Number(parts.pop()) * 3600;
+
+    return total;
+}
+
+const video = document.getElementById("video");
+const playBtn = document.getElementById("playBtn");
+const progress = document.getElementById("progress");
+const fill = document.getElementById("progressFill");
+const timeEl = document.getElementById("time");
+const caption = document.getElementById("captionText");
+
+const cues = parseVTT(document.getElementById("vttData").textContent);
+
+function fmt(t) {
+    let m = Math.floor(t / 60);
+    let s = Math.floor(t % 60);
+    return m + ":" + (s < 10 ? "0" + s : s);
+}
+
+video.addEventListener("loadedmetadata", () => {
+    timeEl.textContent = "0:00 / " + fmt(video.duration);
+});
+
+video.addEventListener("timeupdate", () => {
+    if (video.duration > 0) {
+        fill.style.width = (video.currentTime / video.duration) * 100 + "%";
+        timeEl.textContent = fmt(video.currentTime) + " / " + fmt(video.duration);
+    } else {
+        fill.style.width = "0%";
+        timeEl.textContent = "0:00 / 0:00";
+    }
+
+    let text = "";
+    for (let c of cues) {
+        if (video.currentTime >= c.start && video.currentTime <= c.end) {
+            text = c.text;
+            break;
+        }
+    }
+    caption.textContent = text;
+});
+
+function togglePlay() {
+    if (video.paused) {
+        video.play();
+        playBtn.textContent = "⏸";
+    } else {
+        video.pause();
+        playBtn.textContent = "▶";
+    }
+}
+
+playBtn.addEventListener("click", togglePlay);
+video.addEventListener("click", togglePlay);
+
+document.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        e.preventDefault();
+        togglePlay();
+    }
+});
+
+progress.addEventListener("click", (e) => {
+    const rect = progress.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+    if (video.duration) {
+        video.currentTime = percent * video.duration;
+    }
+});
+</script>
+
+</body>
+</html>
