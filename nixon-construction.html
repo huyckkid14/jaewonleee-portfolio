@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ann Arbor announces closing of Nixon Road on May 12, 2025</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    line-height: 1.7;
+    color: #222;
+}
+
+/* ===============================
+   HOVER ZONE FOR BACK BUTTON
+   =============================== */
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 9998;
+}
+
+/* BACK TO HOME BUTTON */
+.back-home {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    z-index: 9999;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    top: 20px;
+    pointer-events: auto;
+}
+
+/* ===============================
+   HERO
+   =============================== */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/nixon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.6)
+    );
+}
+
+/* CENTER HEADLINE */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* View on Cougar Star button */
+.view-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 24px;
+    background: #9158ff;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.view-btn:hover {
+    background: #7c45e3;
+}
+
+/* CAPTION */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 320px;
+}
+
+/* ARTICLE BODY */
+.article {
+    max-width: 900px;
+    width: 90%;
+    margin: 60px auto;
+    font-size: 1.15rem;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    .header-text .byline {
+        font-size: 1rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="reveal-top"></div>
+<a href="index.html" class="back-home">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>Ann Arbor announces closing of Nixon Road on May 12, 2025</h1>
+        <div class="byline">By Jaewon Lee</div>
+
+        <a class="view-btn"
+           href="https://thecougarstar.com/4816/news/ann-arbor-announces-closing-of-nixon-road-on-may-12-2025/"
+           target="_blank">
+            View on The Cougar Star
+        </a>
+    </div>
+
+    <div class="caption">
+        Construction on Nixon Road will begin at 9 a.m. on Monday, May 12.<br>
+        Photo by Jaewon Lee
+    </div>
+</header>
+
+<div class="article">
+
+<p>The City of Ann Arbor announced that “beginning at 9 a.m. Monday, May 12, Nixon Road between Plymouth Road and Huron Parkway will be closed to through traffic.” This will be a major disruption to some of Clague’s transportation methods.</p>
+
+<p>Kyron Harvell, the principal of Clague Middle School, stated that nearby Ann Arbor Public Schools bus routes would “be on detour to avoid the area.”</p>
+
+<p>“I think closing down Nixon Road will be a huge problem because it’s the main road that kind of connects things together,” Clague eighth grader Liam Harizanoff-Mancour said.</p>
+
+<p>He remarked further, questioning the importance of the project and how it will affect students.</p>
+
+<p>“How will people that don’t take the bus get through [the] drive-line and stuff? This could cause major traffic issues because it’s a main road people use daily, not a side street,” Mancour said.</p>
+
+<p>“Local residential access will be maintained and pedestrian walkways will not be affected,” the City of Ann Arbor said in its official notice.</p>
+
+<p>For more information on the upcoming construction project, students and staff should visit the City of Ann Arbor’s official website at <a href="https://a2gov.org" target="_blank">https://a2gov.org</a>.</p>
+
+</div>
+
+</body>
+</html>
