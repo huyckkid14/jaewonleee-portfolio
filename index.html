@@ -146,6 +146,52 @@ html { scroll-behavior: smooth; }
 }
 
 /* =======================================================
+   PERSONAL STATEMENT
+   ======================================================= */
+/* =======================================================
+   PERSONAL STATEMENT
+   ======================================================= */
+#personal-statement {
+    padding: 120px 20px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+#statement-card {
+    width: 90%;
+    max-width: 900px;
+    background: linear-gradient(135deg, #ffe3ef, #e0d1ff, #d2fff9);
+    border-radius: 22px;
+    padding: 45px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+#statement-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.35), transparent 60%);
+    pointer-events: none;
+}
+
+#statement-text h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #6d2e84;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#statement-text p {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: #4a2f54;
+    margin-bottom: 18px;
+    text-align: center;
+}
+/* =======================================================
    SECTION HEADERS
    ======================================================= */
 .section-title {
@@ -289,7 +335,7 @@ html { scroll-behavior: smooth; }
 
 <!-- NAVIGATION -->
 <div class="nav">
-    <a href="#about">About</a>
+    <a href="#personal-statement">Personal Statement</a>
     <a href="#bio">Huron Bio</a>
     <a href="#writing">Huron Work</a>
     <a href="#cougarbio">Cougar Bio</a>
@@ -312,7 +358,24 @@ html { scroll-behavior: smooth; }
         <div class="slice" style="background-image: url('images/walter.jpg');"></div>
     </div>
 </div>
+<!-- personal statement -->
+<div id="personal-statement">
+   <div id="statement-card">
+      <div id="statement-text">
+         <h2>Personal Statement</h2>
+         <p>
+            Hello! I am Jaewon Lee! I am so glad you are here looking at my wonderful work. 
+            I joined this newspaper class because I love writing for a newspaper. Ever since I started writing for my
+            middle school newspaper club (<em>The Cougar Star</em>), I developed a strong sense with journalism.
+         </p>
 
+         <p>
+            Journalism is a way for me to express everything I think. I'm excitied to learn and get better through this class! Have fun looking at my 
+            work in this past semester.
+         </p>
+      </div>
+   </div>
+</div>
 <!-- HURON BIO -->
 <div id="bio" class="bio-section">
     <div class="bio-card">
