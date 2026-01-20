@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huron implements new attendance and tardy policy</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    line-height: 1.7;
+    color: #222;
+}
+
+/* =======================================================
+   BACK TO HOME (TOP CENTER ON HOVER)
+   ======================================================= */
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 9998;
+}
+
+.back-home {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    z-index: 9999;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    top: 20px;
+    pointer-events: auto;
+}
+
+/* =======================================================
+   HERO IMAGE
+   ======================================================= */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/attendance.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay for readability */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.6)
+    );
+}
+
+/* =======================================================
+   HEADER TEXT
+   ======================================================= */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* View on Emery button */
+.view-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 26px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+.view-btn:hover {
+    background: #e83d70;
+}
+
+/* =======================================================
+   IMAGE CAPTION
+   ======================================================= */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 320px;
+}
+
+/* =======================================================
+   ARTICLE BODY
+   ======================================================= */
+.article {
+    max-width: 900px;
+    width: 90%;
+    margin: 60px auto;
+    font-size: 1.15rem;
+}
+
+/* =======================================================
+   MOBILE
+   ======================================================= */
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    .header-text .byline {
+        font-size: 1rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
+
+/* ===============================
+   REFLECTION – EDITORIAL FEATURE
+   =============================== */
+.reflection-top {
+  max-width: 900px;
+  width: 90%;
+  margin: 60px auto 30px;
+  padding: 45px 40px;
+  background: linear-gradient(180deg, #ffffff, #fff6f9);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  position: relative;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  outline: 3px solid #ff4f81;
+  outline-offset: 6px;
+}
+
+.reflection-top::before {
+  content: "PORTFOLIO REFLECTION";
+  position: absolute;
+  top: -14px;
+  left: 25px;
+  background: #ff4f81;
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.reflection-top h2 {
+  margin: 0 0 20px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.reflection-top p {
+  margin-bottom: 18px;
+  color: #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="reveal-top"></div>
+<a href="index.html" class="back-home">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>Huron implements new attendance and tardy policy</h1>
+        <div class="byline">By Jaewon Lee</div>
+
+        <a class="view-btn"
+           href="https://thehuronemery.com/15027/news/huron-implements-new-attendance-and-tardy-policy/"
+           target="_blank">
+            View on The Huron Emery
+        </a>
+    </div>
+
+    <div class="caption">
+        Attendance in PowerSchool.<br>
+        Image by Kayla Fu
+    </div>
+</header>
+
+<!-- REFLECTION (ADDED ONLY) -->
+<div class="reflection-top">
+  <h2>Reflection</h2>
+
+  <p>
+    I chose this article because it showcases a variety of AI uses in one of the most revered universities in Michigan. This topic is important because it explains about a new change at a college that many Huron students will probably go to. It shows how journalism can inform the community even if it is not informational for certain.
+  </p>
+
+  <p>
+    This piece demonstrates my ability to interview people, as I was able to get a few quotes from a very high-ranking person in the university. It also shows my strength in organization. I made sure the article was clear and informative for my audience.
+  </p>
+
+  <p>
+    One challenge I faced was organizing all the quotes I had for the article. I overcame this by dumping everything out and rearranging it bit by bit. This helped make the organization more interesting and natural.
+  </p>
+</div>
+
+<div class="article">
+
+<p>Huron administrators set a new attendance policy on Dec. 1, 2025. The new rule now accounts for specific disciplinary action for certain amounts of tardies or absences.</p>
+
+<p>“Mr. Carter is always talking about how much attendance matters,” Huron freshman Sydney Anton said. “And it really does.”</p>
+
+<p>However, despite Carter’s words, about 60 students every week show up tardy for class. That is why the new policy was implemented.</p>
+
+<p>Students who accumulate at least five tardies or unverified absences in one week will receive escalating discipline: lunch detention for the first offense, after-school detention for the second, an attendance contract and a parent meeting for the third, and suspension for the fourth. These incidents will notify parents as well as being recorded on PowerSchool.</p>
+
+<p>According to Lorri English, the ninth grade Dean at Huron, the attendance policy was revised “to address growing concerns about attendance and truancy and to ensure consistency and fairness.”</p>
+
+<p>Students who exceed the attendance thresholds will also face temporary restrictions on extracurricular activities like sports and clubs. Subsequently, students who keep a perfect attendance record for a week will receive benefits such as but not limited to complimentary Homecoming, athletic, and school event tickets, front-of-the-line access to the lunch line, and gift cards from local businesses.</p>
+
+<p>“I feel like the new attendance policy makes sense,” Anton said. “Five tardies in a week and five unverified absences seems like a good limit before action is required.”</p>
+
+<p>The attendance policy seems to have a positive incentive on students as well.</p>
+
+<p>“This is our first week enforcing the policy so there is no data yet,” English said. “However, we have great data from utilizing a form of restricted passes during football season.”</p>
+
+<p>Administrators encouraged students to be on time to class, and families were asked to review expectations with their students and contact counselors if attendance barriers arise.</p>
+
+</div>
+
+</body>
+</html>
