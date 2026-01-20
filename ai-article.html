@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University of Michigan creates a university-supported AI Suite</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #222;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* ===============================
+   FIXED BACK TO HOME
+   =============================== */
+
+.reveal-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 9999;
+}
+
+.back-home {
+    position: fixed;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.65);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    z-index: 10000;
+}
+
+.reveal-top:hover ~ .back-home,
+.back-home:hover {
+    top: 20px;
+}
+
+/* ===============================
+   HEADER IMAGE
+   =============================== */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/ai-suite.png");
+    background-size: cover;
+    background-position: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.65)
+    );
+}
+
+/* ===============================
+   TITLE + BYLINE
+   =============================== */
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.7rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+
+.header-text .byline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* EMERY BUTTON */
+.emery-button {
+    margin-top: 18px;
+}
+
+.emery-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4f81;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.emery-button a:hover {
+    background: #e04372;
+}
+
+/* CAPTION */
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+/* ===============================
+   ARTICLE IMAGE VIEWER
+   =============================== */
+
+.article {
+    max-width: 1100px;
+    width: 92%;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.article-note {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ===============================
+   REFLECTION – SAME RED STYLE
+   =============================== */
+
+.reflection-top {
+  max-width: 900px;
+  width: 90%;
+  margin: 60px auto 40px;
+  padding: 45px 40px;
+  background: linear-gradient(180deg, #ffffff, #fff6f9);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  position: relative;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  outline: 3px solid #ff4f81;
+  outline-offset: 6px;
+}
+
+.reflection-top::before {
+  content: "PORTFOLIO REFLECTION";
+  position: absolute;
+  top: -14px;
+  left: 25px;
+  background: #ff4f81;
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.reflection-top h2 {
+  margin: 0 0 20px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.reflection-top p {
+  margin-bottom: 18px;
+  color: #333;
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    .caption {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- invisible hover area -->
+<div class="reveal-top"></div>
+
+<!-- back to home button -->
+<a href="index.html" class="back-home">Back to Home</a>
+
+<header>
+    <div class="header-text">
+        <h1>University of Michigan creates a university-supported AI Suite</h1>
+        <div class="byline">By Jaewon Lee, News Editor</div>
+
+        <div class="emery-button">
+            <a href="https://issuu.com/theemerynewspaper/docs/the_huron_emery_volume_11_issue_1_september_2025" target="_blank">
+                View on The Emery
+            </a>
+        </div>
+    </div>
+
+    <div class="caption">
+        Print edition article screenshot.<br>
+        Graphic by Ella Yip.
+    </div>
+</header>
+
+<!-- Reflection Section -->
+<div class="reflection-top">
+  <h2>Reflection</h2>
+
+  <p>
+    I chose this article because it showcases a variety of AI uses in one of the most revered universities in Michigan. This topic is important because it explains about a new change at a college that many Huron students will probably go to. It shows how journalism can inform the community even if it is not informational for certain.
+  </p>
+
+  <p>
+    This piece demonstrates my ability to interview people, as I was able to get a few quotes from a very high-ranking person in the university. It also shows my strength in organization. I made sure the article was clear and informative for my audience.
+  </p>
+
+  <p>
+    One challenge I faced was organizing all the quotes I had for the article. I overcame this by dumping everything out and rearranging it bit by bit. This helped make the organization more interesting and natural.
+  </p>
+</div>
+
+<!-- Article as Image -->
+<div class="article">
+    <img src="images/ai-suite.png" alt="University of Michigan AI Suite article from print issue">
+    <div class="article-note">
+        This article is displayed as an image because it comes from a print newspaper layout.
+    </div>
+</div>
+
+</body>
+</html>
