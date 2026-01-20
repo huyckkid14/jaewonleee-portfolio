@@ -1,0 +1,157 @@
+name: Inject Reflections (Full Runner)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Run injector
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+
+          function log(msg) {
+            const time = new Date().toISOString();
+            const line = `[${time}] ${msg}\n`;
+            fs.appendFileSync("reflection.log", line);
+            console.log(line.trim());
+          }
+
+          const STYLE = `
+<style>
+/* ===============================
+   REFLECTION – EDITORIAL FEATURE
+   =============================== */
+
+.reflection-top {
+  max-width: 900px;
+  width: 90%;
+  margin: 60px auto 30px;
+  padding: 45px 40px;
+  background: linear-gradient(180deg, #ffffff, #fff6f9);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  position: relative;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  outline: 3px solid #ff4f81;
+  outline-offset: 6px;
+}
+
+.reflection-top::before {
+  content: "PORTFOLIO REFLECTION";
+  position: absolute;
+  top: -14px;
+  left: 25px;
+  background: #ff4f81;
+  color: white;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.reflection-top h2 {
+  margin: 0 0 20px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.reflection-top p {
+  margin-bottom: 18px;
+  color: #333;
+}
+</style>
+`;
+
+          const TARGETS = [
+            {
+              file: "cell-phone.html",
+              html: `
+<div class="reflection-top">
+<h2>Reflection</h2>
+<p>I chose this article because it focuses on the new cell phone policy at Huron High School. This topic is important because it explains about a new change at the school. It shows how journalism can inform about new changes and policies to the community.</p>
+<p>This piece demonstrates my ability to create a news piece under tight deadlines (I was asked to do this last-minute). It also shows my strength in interviewing people. I made sure the article was informative for my audience.</p>
+<p>One challenge I faced was writing this under a tight deadline. I overcame this by doing interviews as soon as possible. This helped make the article stronger.</p>
+</div>`
+            },
+            {
+              file: "aaps-email-scam.html",
+              html: `
+<div class="reflection-top">
+<h2>Reflection</h2>
+<p>I chose this article because it focuses on a recent incident that happened in the school district. This topic is important because it involves personal data that might be used to hack accounts if appropriate precautions aren’t taken. It shows how journalism can inform and protect the community.</p>
+<p>This piece demonstrates my ability to report events. It also shows my strength in maintaining a non-opiniated tone throughout the article. I made sure the article was clear and informative for my audience.</p>
+<p>Fortunately, I didn’t have any major challenges writing this article.</p>
+</div>`
+            },
+            {
+              file: "around-the-world-mr-crowley.html",
+              html: `
+<div class="reflection-top">
+<h2>Reflection</h2>
+<p>I chose this article because it showcases a teacher at school. You never read teacher features that often. This topic is important because it shows the key factor of the teacher’s life, which is critical if the teacher and the student wants to form a positive relationship throughout the semester. It shows how journalism can showcase the community.</p>
+<p>This piece demonstrates my ability to create an entire article based on just one interview for a feature. It also shows my strength in organization. I made sure the article was clear, informative, and correct for my audience.</p>
+<p>Fortunately, I didn’t have any mistakes writing this article either.</p>
+</div>`
+            },
+            {
+              file: "walter-mcmorrough.html",
+              html: `
+<div class="reflection-top">
+<h2>Reflection</h2>
+<p>I chose this article because it focuses on a Huron student and his life. This topic is important because it explains about how Huron students’ lives are like. It shows how journalism can explain the Huron community.</p>
+<p>This piece demonstrates my ability to provide a story about a student.</p>
+<p>I didn’t, again, have any problems when writing the article.</p>
+</div>`
+            }
+          ];
+
+          function inject(file, block) {
+            log(`Opening ${file}`);
+            let html = fs.readFileSync(file, "utf8");
+
+            const open = "<header>";
+            const close = "</header>";
+
+            const start = html.indexOf(open);
+            if (start === -1) throw new Error(`No plain <header> in ${file}`);
+            const end = html.indexOf(close, start);
+            if (end === -1) throw new Error(`Unclosed <header> in ${file}`);
+
+            const pos = end + close.length;
+            const injection = "\n" + STYLE + "\n" + block + "\n";
+
+            html = html.slice(0, pos) + injection + html.slice(pos);
+            fs.writeFileSync(file, html, "utf8");
+
+            log(`Injected reflection into ${file}`);
+          }
+
+          for (const t of TARGETS) {
+            inject(t.file, t.html);
+          }
+
+          log("All reflections injected.");
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Auto-inject reflections into articles" || echo "No changes to commit"
+          git push
